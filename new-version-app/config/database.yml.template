@@ -8,19 +8,19 @@ default: &default
 
 development:
   <<: *default
-  database: Demo-app-2
+  database: Demo-app-2_development
   username: <%= ENV['DATABASE_USERNAME'] %>
   password: <%= ENV['DATABASE_PASSWORD'] %>
 
 test:
   <<: *default
-  database: Demo-app-2
+  database: Demo-app-2_test
   username: <%= ENV['DATABASE_USERNAME'] %>
   password: <%= ENV['DATABASE_PASSWORD'] %>
 
 production:
   <<: *default
-  database: Demo-app-2
+  database: Demo-app-2_production
   username: <%= ENV['PRODUCTION_DATABASE_USERNAME'] %>
   password: <%= ENV['PRODUCTION_DATABASE_PASSWORD'] %>
   host: <%= ENV['PRODUCTION_DATABASE_HOST'] %>
