@@ -1,0 +1,33 @@
+<h1>Id: <%= @student.id%></h1>
+<p>First Name: <%= @student.first_name%></p>
+<p>
+<%= @student.last_name %>
+</p>
+<p>
+    Username: <%= @student.username%> <br>
+</p>
+<p>
+    Email: <%= @student.email%><br>
+</p>
+<p>
+    Phone Number: <%= @student.phone_number%><br>
+</p>
+<p>
+    DOB: <%=@student.dob%>   
+    <%# DOB: <%= @student.dob.strftime("%d/%m/%Y")%><br> %>
+</p>
+<p>
+
+    Term Start Date: <%= @student.term_start_date%><br>
+</p>
+<p>
+    Term End Date: <%= @student.term_end_date%><br>
+</p>
+<p>
+    Zip Code: <%= @student.zip_code%><br>
+</p>
+<ul>
+<li><%= link_to "Edit", edit_student_path(@student) %></li>
+<li> <%= link_to "Destory", student_path(@student), data: { turbo_method: :delete, turbo_confirm: "Are you sure??"} %></li> 
+<%# <li> <%= link_to "Show All", root_path </li>%> 
+</ul>
