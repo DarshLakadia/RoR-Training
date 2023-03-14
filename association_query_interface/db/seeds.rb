@@ -9,7 +9,7 @@ Category.destroy_all
 Item.destroy_all
 Modifier.destroy_all
 Rating.destroy_all
-
+ItemModifier.destroy_all
 5.times do
   Category.create(name: Faker::Commerce.department)
 end
@@ -32,4 +32,10 @@ end
     price: Faker::Commerce.price,
     stock_quantity: rand(1..100)
   )
+end
+
+10.times do
+  ItemModifier.create(item_id: Item.ids.sample,
+    modifier_id: Modifier.ids.sample,
+    status: Item.all.pluck(:status).sample)
 end
